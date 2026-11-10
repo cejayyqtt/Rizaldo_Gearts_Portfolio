@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Am I Becoming? | Gabriel Rizaldo | GEARTS Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Chakra+Petch:ital,wght@0,700;1,700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#111417;--panel:#1a1f23;--line:#2e363c;--ink:#e6e3d8;--mute:#a3978a;--a:#f27f2a;--b:#d4572f;--steel:#e0966a}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:17px/1.6 Barlow,system-ui,sans-serif;background:var(--bg);color:var(--ink);
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;background-position:-1px -1px}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 0,#11141799,var(--bg) 75%);z-index:-1}
+h1,h2,h3{font-family:"Chakra Petch",sans-serif;font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:.01em}
+.mono,.label,nav,.tag,.chips button{font-family:"IBM Plex Mono",monospace}
+.wrap{max-width:1160px;margin:auto;padding:0 26px}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:0 26px;height:50px;background:#111417ee;border-bottom:1px solid var(--line);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+nav b{color:var(--a)}nav div{display:flex;gap:22px}nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--a)}
+@media(max-width:700px){nav b{display:none}nav{justify-content:center}}
+.hero{padding:90px 0 60px}
+.hero h1{font-size:clamp(50px,9.5vw,128px);max-width:980px;font-style:italic}
+.hero h1 em{color:var(--a);font-style:inherit;-webkit-text-stroke:0}
+.hero p{max-width:520px;margin-top:26px;color:var(--mute);font-size:19px;border-left:3px solid var(--a);padding-left:16px}
+.hero p.label{color:var(--bg);font-size:12px;max-width:none;margin-top:0;border-left:0;padding:3px 14px 3px 10px}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px;font:13px "IBM Plex Mono",monospace;color:var(--mute);text-transform:uppercase}
+.stats b{display:block;font:700 34px "Chakra Petch";color:var(--ink)}
+.tick{overflow:hidden;background:var(--a);color:var(--bg);font:700 13px "IBM Plex Mono",monospace;text-transform:uppercase;white-space:nowrap;margin-top:60px}
+.tick div{display:inline-block;padding:9px 0;animation:m 30s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none}html{scroll-behavior:auto}}
+.sec{padding:90px 0 10px}
+.label{display:inline-block;background:var(--a);color:var(--bg);font-size:12px;font-weight:700;padding:3px 14px 3px 10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+h2{font-size:clamp(36px,5.5vw,70px);margin-bottom:16px;font-style:italic}
+.lead{max-width:560px;margin-bottom:34px;color:var(--mute)}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;list-style:none;padding:0;margin-top:50px;background:var(--line);border:1px solid var(--line)}
+.toc a{display:block;padding:20px;background:var(--panel);color:var(--ink);text-decoration:none;font:700 20px "Chakra Petch";text-transform:uppercase;transition:.15s}
+.toc a:hover{background:var(--a);color:var(--bg)}.toc a:hover small,.toc a:hover span{color:var(--bg)}
+.toc small{display:block;font:400 14px Barlow;text-transform:none;color:var(--mute)}.toc span{font:700 12px "IBM Plex Mono";color:var(--a);display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chips button{font-size:12px;text-transform:uppercase;padding:7px 16px;border:1px solid var(--line);background:var(--panel);color:var(--mute);cursor:pointer;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%)}
+.chips button:hover{color:var(--ink)}.chips button[aria-pressed=true]{background:var(--a);color:var(--bg);border-color:var(--a);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--steel);padding:10px 10px 14px;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:.18s}
+.card:hover,.card:focus-visible{border-top-color:var(--a);transform:translateY(-4px);outline:none;box-shadow:0 12px 30px #0008}
+.ph{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;font:12px "IBM Plex Mono",monospace;color:var(--mute);padding:12px;background:repeating-linear-gradient(135deg,#0000 0 9px,#ffffff08 9px 10px),#0d1013;border:1px dashed var(--line)}
+.ph img,.ph iframe{width:100%;height:100%;border:0;object-fit:cover}.ph:has(img),.ph:has(iframe){padding:0;display:block;border:0}
+.cap{padding:12px 2px 0}.cap b{display:block;font:700 19px/1.2 "Chakra Petch";text-transform:uppercase}.cap span{font:12px "IBM Plex Mono",monospace;color:var(--mute)}
+.tag{display:inline-block;margin-top:9px;font-size:11px;text-transform:uppercase;padding:1px 9px;border:1px solid var(--steel);color:var(--steel)}.tag.g{border-color:var(--b);color:var(--b)}
+.ex{display:grid;grid-template-columns:1fr 1.2fr;gap:34px;align-items:center;padding:26px;margin-bottom:26px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--c)}
+.ex:nth-child(even){direction:rtl}.ex:nth-child(even)>*{direction:ltr}
+.ex .num{font:700 12px "IBM Plex Mono",monospace;color:var(--c)}.ex h3{font-size:clamp(26px,3.6vw,42px);margin:8px 0 12px}.ex p{margin-bottom:12px;color:var(--mute)}
+.ex a{display:inline-block;color:var(--bg);background:var(--c);font:700 12px "IBM Plex Mono",monospace;text-transform:uppercase;padding:7px 16px;text-decoration:none;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%)}
+@media(max-width:800px){.ex{grid-template-columns:1fr}.ex:nth-child(even){direction:ltr}}
+.note{max-width:780px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--a);padding:34px}
+.note h3{font:700 13px "IBM Plex Mono",monospace;color:var(--a);margin-top:4px;letter-spacing:.08em}.note p{margin-bottom:22px}
+details{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--steel);padding:16px 22px;margin-bottom:14px}
+details[open]{border-left-color:var(--a)}
+summary{cursor:pointer;font:700 20px "Chakra Petch";text-transform:uppercase;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";font-family:"IBM Plex Mono";color:var(--a)}details[open] summary::after{content:"–"}
+details ul{padding-left:20px;margin:12px 0;color:var(--mute)}.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:14px 0}.shots .ph{aspect-ratio:1}.shots .ph img{object-fit:contain}
+footer{margin-top:90px;padding:28px 0 50px;border-top:1px solid var(--line);font:13px "IBM Plex Mono",monospace;color:var(--mute)}
+dialog{border:1px solid var(--line);border-top:3px solid var(--a);max-width:600px;width:92vw;padding:16px;background:var(--panel);color:var(--ink)}
+dialog::backdrop{background:#000c}dialog h3{font-size:30px;margin:14px 0 8px}dialog p{font-size:15px;margin-top:8px;color:var(--mute)}dialog p b{color:var(--ink)}
+dialog .x{float:right;font:12px "IBM Plex Mono";text-transform:uppercase;border:1px solid var(--line);background:none;color:var(--ink);padding:4px 12px;cursor:pointer;margin-bottom:10px}
+</style>
+</head>
+<body>
+<nav aria-label="Main"><b>Gabriel Rizaldo</b><div><a href="#part1">Part I</a><a href="#part2">Part II</a><a href="#reflection">Reflection</a><a href="#appendices">Appendices</a></div></nav>
+
+<main class="wrap">
+<header class="hero">
+  <p class="label">Gabriel Rudolf G. Rizaldo · BSIT 3A · GEARTS Final Portfolio</p>
+  <h1>Who am I <em>becoming?</em></h1>
+  <p>Hands, Words, and Color. This portfolio shows what I made in Art Appreciation, from poems and paintings to a video. It also shows new things I tried on my own, and what they taught me about myself.</p>
+  <div class="stats"><div><b>I</b>Course archive</div><div><b>II</b>New exploration</div><div><b>3</b>New works</div></div>
+  <ol class="toc">
+    <li><a href="#part1"><span>01</span>Part I<small>My Art Appreciation Journey</small></a></li>
+    <li><a href="#part2"><span>02</span>Part II<small>My Artistic Exploration</small></a></li>
+    <li><a href="#reflection"><span>03</span>Reflection<small>Who Am I Becoming?</small></a></li>
+    <li><a href="#appendices"><span>04</span>Appendices<small>Proof of work</small></a></li>
+  </ol>
+</header>
+</main>
+
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<main class="wrap">
+<section class="sec" id="part1">
+  <p class="label">Part I</p><h2>My Art Appreciation Journey</h2>
+  <p class="lead">Every output I made in GEARTS, individual and group. Filter by theme, then open a work for details.</p>
+  <div class="chips" id="chips"></div><div class="grid" id="grid"></div>
+</section>
+
+<section class="sec" id="part2">
+  <p class="label">Part II</p><h2>My Artistic Exploration</h2>
+  <p class="lead">Three works outside my usual practice, entirely human-made. Proof of process is in the Appendices.</p>
+  <div id="works"></div>
+</section>
+
+<section class="sec" id="reflection">
+  <p class="label">Final Reflection</p><h2>Looking forward: who am I becoming?</h2>
+  <div class="note">
+    <p>Before this course, I thought art was only for people who were good at drawing. I did not think I was one of them, so I never saw myself as a creative person. I saw art as something to look at, not something I could make.</p>
+    <p>When I look at my works together, I notice that I like using simple materials, like pages of a book, coffee, and a pen. The works I struggled with most were the ones where I could not fix a mistake easily, like carving. Those taught me to slow down and think before I act.</p>
+    <p>Carving was the most unfamiliar for me. I had to work with a hard material, and every cut stayed. It surprised me how much patience it needed. Photography was different. It made me look at small things around me and choose what to show and what to leave out.</p>
+    <p>Making art helped me notice more, ask more questions, and say things in a way that words alone could not. Poems made from book spines and blacked-out pages showed me that I can find meaning in things that were already there.</p>
+    <p>My choices show that I like quiet, simple, and hands-on work. Someone who sees my portfolio might think I am a quiet person who keeps things plain. They might misunderstand that and think I did not put in much effort. In truth, simple works took a lot of thought for me.</p>
+    <p>Looking forward, I am becoming someone who is more patient and less afraid to try something new. Art will stay in my life as a way to slow down, notice things, and express myself.</p>
+  </div>
+</section>
+
+<section class="sec" id="appendices">
+  <p class="label">Appendices</p><h2>Proof of work</h2>
+  <p class="lead">Process evidence for each Part II work, in the same order as above.</p>
+  <div id="apps"></div>
+</section>
+<footer>Gabriel Rudolf G. Rizaldo · BSIT 3A · GEARTS Final Portfolio </footer>
+</main>
+
+<dialog id="dlg" aria-label="Artwork details"><button class="x" onclick="dlg.close()">close ✕</button><div id="dbody"></div></dialog>
+
+<script>
+/* ===== EDIT HERE =====
+   img: path such as "images/work1.jpg" ("" keeps the placeholder)
+   yt : YouTube video ID ("" for none)
+   type: "Individual" or "Group" (Group needs group + role); ai: AI disclosure or "None" */
+const part1 = [
+  {room:"Visual Studies", t:"Drawing", medium:"Drawing", type:"Individual", img:"images/Drawing.jpg", yt:"", ai:"None", note:"A drawing made for the Visual Studies activity."},
+  {room:"Visual Studies", t:"Painting", medium:"Painting", type:"Individual", img:"images/Painting.jpg", yt:"", ai:"None", note:"A painting made for the Visual Studies activity."},
+  {room:"Visual Studies", t:"Coffee Painting", medium:"Coffee painting", type:"Individual", img:"images/CoffeePainting.jpg", yt:"", ai:"None", note:"A painting made with coffee instead of regular paint."},
+  {room:"Visual Studies", t:"Scribble Art", medium:"Pen scribble art", type:"Individual", img:"images/ScribbleArt.jpg", yt:"", ai:"None", note:"An artwork built from free, loose scribbles."},
+  {room:"Words & Memes", t:"Blackout Poetry", medium:"Blackout poetry", type:"Individual", img:"images/BlackOutPoetry.jpg", yt:"", ai:"None", note:"A poem made by blacking out most words on a printed page and keeping only a few."},
+  {room:"Words & Memes", t:"Book Spine Poetry", medium:"Book spine poetry", type:"Individual", img:"images/BookSpinePoetry.jpg", yt:"", ai:"None", note:"A poem made from the titles on the spines of stacked books, read from top to bottom."},
+  {room:"Multimedia", t:"Stories in Motion", medium:"Video", type:"Group", group:"[Group name]", role:"[Your role]", img:"", yt:"", ai:"None", note:"A short group video that tells a story through moving images and sound."}
+];
+const part2 = [
+  {t:"Carving", medium:"Carving", img:"images/Carving.jpg", yt:"", why:"I chose carving because I had never done it before. Working with a hard material and sharp tools was new to me, and every cut was permanent."},
+  {t:"Photography Series", medium:"Photography + editing", img:"images/Photography.JPG", yt:"", why:"I chose photography to practice noticing small details. Choosing the frame, the light, and the angle was harder than I expected."},
+  {t:"Vocal Performance", medium:"Vocal performance", img:"", yt:"", why:"I chose to sing because performing in front of a camera was outside my comfort zone. It was hard to stay calm and keep my voice steady."}
+];
+const appendices = [
+  {title:"Carving", list:["Photos of the carving process (Proof 1 and Proof 2)","Photo of the finished carving"], imgs:["images/CarvingProof1.jpg","images/CarvingProof2.jpg"], yt:""},
+  {title:"Photography Series", list:["Screenshot of the original capture and camera details","Selection and editing process"], imgs:["images/PhotographyProof.PNG"], yt:""},
+  {title:"Vocal Performance", list:["Original unedited recording showing me performing","Rehearsal or practice photos"], imgs:[], yt:""}
+];
+/* ===== END EDIT ===== */
+
+const $=s=>document.querySelector(s), dlg=$("#dlg"), pad=n=>String(n).padStart(2,"0");
+const cols=["var(--a)","var(--b)","var(--steel)"];
+const tag=o=>`<span class="tag ${o.type==="Group"?"g":""}">${o.type}</span>`;
+function media(o){
+  if(o.yt) return `<div class="ph"><iframe src="https://www.youtube-nocookie.com/embed/${o.yt}" title="${o.t}" allowfullscreen loading="lazy"></iframe></div>`;
+  if(o.img) return `<div class="ph"><img src="${o.img}" alt="${o.t}" loading="lazy"></div>`;
+  return `<div class="ph">[ ${/video|performance/i.test(o.medium||"")?"YouTube link":"image"} placeholder ]</div>`;
+}
+$("#tk").textContent=("WHO AM I BECOMING // GEARTS // ART APPRECIATION // FINAL PORTFOLIO // ").repeat(8);
+const rooms=["All",...new Set(part1.map(o=>o.room))];
+function draw(f){
+  $("#chips").innerHTML=rooms.map(r=>`<button aria-pressed="${r===f}" data-f="${r}">${r}</button>`).join("");
+  $("#grid").innerHTML=part1.map((o,i)=>[o,i]).filter(([o])=>f==="All"||o.room===f).map(([o,i])=>`
+   <button class="card" data-i="${i}">${media(o)}<div class="cap"><b>${o.t}</b><span>FILE ${pad(i+1)} · ${o.medium}</span><br>${tag(o)}</div></button>`).join("");
+}
+draw("All");
+document.addEventListener("click",e=>{
+  const f=e.target.closest("[data-f]"); if(f) return draw(f.dataset.f);
+  const c=e.target.closest(".card"); if(!c) return;
+  const o=part1[c.dataset.i];
+  $("#dbody").innerHTML=media(o)+`<h3>${o.t}</h3>${tag(o)}<p>${o.medium}${o.type==="Group"?` — ${o.group}, my role: ${o.role}`:""}</p><p>${o.note}</p><p><b>AI use:</b> ${o.ai}</p>`;
+  dlg.showModal();
+});
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+$("#works").innerHTML=part2.map((o,i)=>`<article class="ex" style="--c:${cols[i%3]}">
+ <div><span class="num">WORK ${pad(i+1)} // 03</span><h3>${o.t}</h3><p>${o.medium} · Individual</p><p>${o.why}</p><a href="#app${i+1}">Proof → Appendix ${i+1}</a></div>${media(o)}</article>`).join("");
+$("#apps").innerHTML=appendices.map((a,i)=>`<details id="app${i+1}"><summary>Appendix ${i+1} — ${a.title}</summary>
+ <ul>${a.list.map(l=>`<li>${l}</li>`).join("")}</ul>
+ <div class="shots">${(a.imgs&&a.imgs.length?a.imgs.map(s=>`<div class="ph"><img src="${s}" alt="${a.title} proof" loading="lazy"></div>`):[1,2,3,4].map(()=>`<div class="ph">[ image placeholder ]</div>`)).join("")}</div>
+ ${a.yt?media({t:a.title,yt:a.yt,medium:"Video"}):""}</details>`).join("");
+addEventListener("hashchange",()=>{if(location.hash.startsWith("#app")){const d=document.getElementById(location.hash.slice(1));if(d&&d.tagName==="DETAILS")d.open=true}});
+</script>
+</body>
+</html>
