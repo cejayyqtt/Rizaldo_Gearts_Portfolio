@@ -94,7 +94,7 @@ dialog .x{float:right;font:12px "IBM Plex Mono";text-transform:uppercase;border:
 
 <section class="sec" id="part2">
   <p class="label">Part II</p><h2>My Artistic Exploration</h2>
-  <p class="lead">Three works outside my usual practice, entirely human-made. Proof of process is in the Appendices.</p>
+  <p class="lead">Three works outside my usual practice, entirely human-made. Proof of process for Carving and Photography is in the Appendices.</p>
   <div id="works"></div>
 </section>
 
@@ -112,7 +112,7 @@ dialog .x{float:right;font:12px "IBM Plex Mono";text-transform:uppercase;border:
 
 <section class="sec" id="appendices">
   <p class="label">Appendices</p><h2>Proof of work</h2>
-  <p class="lead">Process evidence for each Part II work, in the same order as above.</p>
+  <p class="lead">Process evidence for the Carving and Photography works, in the same order as above.</p>
   <div id="apps"></div>
 </section>
 <footer>Gabriel Rudolf G. Rizaldo · BSIT 3A · GEARTS Final Portfolio </footer>
@@ -121,12 +121,7 @@ dialog .x{float:right;font:12px "IBM Plex Mono";text-transform:uppercase;border:
 <dialog id="dlg" aria-label="Artwork details"><button class="x" onclick="dlg.close()">close ✕</button><div id="dbody"></div></dialog>
 
 <script>
-/* ===== EDIT HERE =====
-   img: path such as "images/work1.jpg" ("" keeps the placeholder)
-   yt : YouTube video ID ("" for none)
-   type: "Individual" or "Group" (Group outputs group presentation/film analysis); ai: AI disclosure or "None" */
 const part1 = [
-  {room:"Visual Studies", t:"Drawing", medium:"Drawing", type:"Individual", img:"images/Drawing.jpg", yt:"", ai:"None", note:"A drawing made for the Visual Studies activity."},
   {room:"Multimedia", t:"Team Film: Analysis", medium:"Film Analysis", type:"Group", img:"", yt:"izYpfbotgKU", ai:"None", note:"A group film analysis presentation."},
   {room:"Visual Studies", t:"Painting", medium:"Painting", type:"Individual", img:"images/Painting.jpg", yt:"", ai:"None", note:"A painting made for the Visual Studies activity."},
   {room:"Visual Studies", t:"Coffee Painting", medium:"Coffee painting", type:"Individual", img:"images/CoffeePainting.jpg", yt:"", ai:"None", note:"A painting made with coffee instead of regular paint."},
@@ -136,16 +131,14 @@ const part1 = [
   {room:"Multimedia", t:"Stories in Motion", medium:"Video", type:"Group", img:"", yt:"SVzCDbMyyX8", ai:"None", note:"A short group video that tells a story through moving images and sound."}
 ];
 const part2 = [
-  {t:"Carving", medium:"Carving", img:"images/Carving.jpg", yt:"", why:"I chose carving because I had never done it before. Working with a hard material and sharp tools was new to me, and every cut was permanent."},
-  {t:"Photography Series", medium:"Photography + editing", img:"images/Photography.JPG", yt:"", why:"I chose photography to practice noticing small details. Choosing the frame, the light, and the angle was harder than I expected."},
-  {t:"Vocal Performance", medium:"Vocal performance", img:"", yt:"", why:"I chose to sing because performing in front of a camera was outside my comfort zone. It was hard to stay calm and keep my voice steady."}
+  {t:"Carving", medium:"Carving", img:"images/Carving.jpg", yt:"", proof:1, why:"I chose carving because I had never done it before. Working with a hard material and sharp tools was new to me, and every cut was permanent."},
+  {t:"Photography Series", medium:"Photography + editing", img:"images/Photography.JPG", yt:"", proof:2, why:"I chose photography to practice noticing small details. Choosing the frame, the light, and the angle was harder than I expected."},
+  {t:"Drawing", medium:"Drawing", img:"images/Drawing.jpg", yt:"", proof:0, why:"I chose to draw a calm scene from everyday life: an orange cat sleeping by a window, with tulips in a vase and a colorful frame around it. I used to think I was not good at drawing, so I wanted to try anyway. Coloring every small part took a lot of patience."}
 ];
 const appendices = [
   {title:"Carving", list:["Photos of the carving process (Proof 1 and Proof 2)","Photo of the finished carving"], imgs:["images/CarvingProof1.jpg","images/CarvingProof2.jpg"], yt:""},
-  {title:"Photography Series", list:["Screenshot of the original capture and camera details","Selection and editing process"], imgs:["images/PhotographyProof.PNG"], yt:""},
-  {title:"Vocal Performance", list:["Original unedited recording showing me performing","Rehearsal or practice photos"], imgs:[], yt:""}
+  {title:"Photography Series", list:["Screenshot of the original capture and camera details","Selection and editing process"], imgs:["images/PhotographyProof.PNG"], yt:""}
 ];
-/* ===== END EDIT ===== */
 
 const $=s=>document.querySelector(s), dlg=$("#dlg"), pad=n=>String(n).padStart(2,"0");
 const cols=["var(--a)","var(--b)","var(--steel)"];
@@ -172,7 +165,7 @@ document.addEventListener("click",e=>{
 });
 dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 $("#works").innerHTML=part2.map((o,i)=>`<article class="ex" style="--c:${cols[i%3]}">
- <div><span class="num">WORK ${pad(i+1)} // 03</span><h3>${o.t}</h3><p>${o.medium} · Individual</p><p>${o.why}</p><a href="#app${i+1}">Proof → Appendix ${i+1}</a></div>${media(o)}</article>`).join("");
+ <div><span class="num">WORK ${pad(i+1)} // 03</span><h3>${o.t}</h3><p>${o.medium} · Individual</p><p>${o.why}</p>${o.proof?`<a href="#app${o.proof}">Proof → Appendix ${o.proof}</a>`:""}</div>${media(o)}</article>`).join("");
 $("#apps").innerHTML=appendices.map((a,i)=>`<details id="app${i+1}"><summary>Appendix ${i+1} — ${a.title}</summary>
  <ul>${a.list.map(l=>`<li>${l}</li>`).join("")}</ul>
  <div class="shots">${(a.imgs&&a.imgs.length?a.imgs.map(s=>`<div class="ph"><img src="${s}" alt="${a.title} proof" loading="lazy"></div>`):[1,2,3,4].map(()=>`<div class="ph">[ image placeholder ]</div>`)).join("")}</div>
